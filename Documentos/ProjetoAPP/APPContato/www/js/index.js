@@ -44,3 +44,30 @@ var app = {
 };
 
 app.initialize();
+	document.getElementById("ajustarArmazenamentoLocal").addEventListener("click",ajustarArmazanamentoLocal);
+	document.getElementById("click",mostrarArmazenamentoLocal).addEventListener("click",mostrarArmazenamentoLocal);
+	document.getElementById("removerArmazenamentoLocal").addEventListener("click",removerArmazenamentoLocal);
+	document.getElementById("pegarArmazenamentoLocal").addEventListener("click",pegarAmazenamentoLocal);
+	var armazenamentoLocal = window.LocalStorage;
+	
+	function ajustarArmazenamentoLocal(){
+		armazenamentoLocal.setItem("Nome","Marcos");
+		armazenamentoLocal.setItem("Profissão","Programador");
+		armazenamentoLocal.setItem("Projeto","Aplicativo de Armazenamento Local");
+		
+	}
+	function mostrarArmazenamentoLocal(){
+		console.log(armazenamentoLocal.getItem("Nome"));
+		console.log(armazenamentoLocal.getItem("Profissão"));
+		console.log(armazenamentoLocal.getItem("Projeto"));
+	}
+	function mostrarArmazenamentoLocal(){
+		document.open();
+		document.write("<h1> Lista de Contatos </h1>");
+		document.write("<br>");
+		document.write(armazenamentoLocal.getItem("Marcos"));
+		document.write(armazenamentoLocal.getItem("Profissão"));
+		document.write(armazenamentoLocal.getItem("Projeto"));
+		document.close();	
+	}
+		
