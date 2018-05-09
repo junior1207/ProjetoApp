@@ -63,6 +63,21 @@ app.initialize();
 		
 	}
 	*/
+	function removeArmazenamentoLocal(){
+		armazenamentoLocal.removeItem("Projeto");
+		
+	
+	}
+	
+	function pegarArmazenamentoLocal(){
+		var novaJanela = window.open();
+		novaJanela.document.open();
+		novaJanela.document.write("<h1> Item Resgatado</h1>");
+		
+		novaJanela.document.write(armazenamentoLocalKey(0));
+		novaJanela.document.close();
+	
+	}
 	function mostrarArmazenamentoLocal(){
 		var novaJanela = window.open();
 		novaJanela.document.open();
