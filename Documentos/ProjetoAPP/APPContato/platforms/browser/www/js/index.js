@@ -44,3 +44,39 @@ var app = {
 };
 
 app.initialize();
+	document.getElementById("ajusteArmazenamentoLocal").addEventListener("click",ajustarArmazenamentoLocal);
+	document.getElementById("MostrarArmazenamentoLocal").addEventListener("click",mostrarArmazenamentoLocal);
+	document.getElementById("removeArmazenamentoLocal").addEventListener("click",removerArmazenamentoLocal);
+	document.getElementById("pegarArmazenamentoLocal").addEventListener("click",pegarAmazenamentoLocal);
+	var localStorage = window.localStorage;
+	
+	function ajustarArmazenamentoLocal(){
+		localStorage.setItem("Nome","Marcos");
+		localStorage.setItem("Profissão","Programador");
+		localStorage.setItem("Projeto","Aplicativo de Armazenamento Local");
+		
+	}
+	/*function mostrarArmazenamentoLocal(){
+		console.log(localStorage.getItem("Nome"));
+		console.log(localStorage.getItem("Profissão"));
+		console.log(localStorage.getItem("Projeto"));
+		
+	}
+	*/
+	function mostrarArmazenamentoLocal(){
+		var novaJanela = window.open();
+		novaJanela.document.open();
+		
+		novaJanela.document.write("<h1> Lista de Contatos </h1>");
+		novaJanela.document.write("<br>");
+		novaJanela.document.write(localStorage.getItem("Nome"));
+		novaJanela.document.write("<br>");
+		novaJanela.document.write(localStorage.getItem("Profissão"));
+		novaJanela.document.write("<br>");
+		novaJanela.document.write(localStorage.getItem("Projeto"));
+		
+		novaJaneladocument.close();
+			
+	}
+	
+		

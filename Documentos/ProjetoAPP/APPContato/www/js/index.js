@@ -44,30 +44,39 @@ var app = {
 };
 
 app.initialize();
-	document.getElementById("ajustarArmazenamentoLocal").addEventListener("click",ajustarArmazanamentoLocal);
-	document.getElementById("click",mostrarArmazenamentoLocal).addEventListener("click",mostrarArmazenamentoLocal);
-	document.getElementById("removerArmazenamentoLocal").addEventListener("click",removerArmazenamentoLocal);
+	document.getElementById("ajusteArmazenamentoLocal").addEventListener("click",ajustarArmazenamentoLocal);
+	document.getElementById("MostrarArmazenamentoLocal").addEventListener("click",mostrarArmazenamentoLocal);
+	document.getElementById("removeArmazenamentoLocal").addEventListener("click",removerArmazenamentoLocal);
 	document.getElementById("pegarArmazenamentoLocal").addEventListener("click",pegarAmazenamentoLocal);
-	var armazenamentoLocal = window.LocalStorage;
+	var localStorage = window.localStorage;
 	
 	function ajustarArmazenamentoLocal(){
-		armazenamentoLocal.setItem("Nome","Marcos");
-		armazenamentoLocal.setItem("Profissão","Programador");
-		armazenamentoLocal.setItem("Projeto","Aplicativo de Armazenamento Local");
+		localStorage.setItem("Nome","Marcos");
+		localStorage.setItem("Profissão","Programador");
+		localStorage.setItem("Projeto","Aplicativo de Armazenamento Local");
 		
 	}
-	function mostrarArmazenamentoLocal(){
-		console.log(armazenamentoLocal.getItem("Nome"));
-		console.log(armazenamentoLocal.getItem("Profissão"));
-		console.log(armazenamentoLocal.getItem("Projeto"));
+	/*function mostrarArmazenamentoLocal(){
+		console.log(localStorage.getItem("Nome"));
+		console.log(localStorage.getItem("Profissão"));
+		console.log(localStorage.getItem("Projeto"));
+		
 	}
+	*/
 	function mostrarArmazenamentoLocal(){
-		document.open();
-		document.write("<h1> Lista de Contatos </h1>");
-		document.write("<br>");
-		document.write(armazenamentoLocal.getItem("Marcos"));
-		document.write(armazenamentoLocal.getItem("Profissão"));
-		document.write(armazenamentoLocal.getItem("Projeto"));
-		document.close();	
+		var novaJanela = window.open();
+		novaJanela.document.open();
+		
+		novaJanela.document.write("<h1> Lista de Contatos </h1>");
+		novaJanela.document.write("<br>");
+		novaJanela.document.write(localStorage.getItem("Nome"));
+		novaJanela.document.write("<br>");
+		novaJanela.document.write(localStorage.getItem("Profissão"));
+		novaJanela.document.write("<br>");
+		novaJanela.document.write(localStorage.getItem("Projeto"));
+		
+		novaJaneladocument.close();
+			
 	}
+	
 		
